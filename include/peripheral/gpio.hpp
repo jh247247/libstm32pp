@@ -103,8 +103,8 @@ namespace gpio {
         gpio::cr::States,
         gpio::cr::States);
 
-    static inline void setValue(u32 const value);
-    static inline u32 getValue();
+    static inline void setOutput(u32 const value);
+    static inline u32 getOutput();
 
     private:
     Port();
@@ -144,9 +144,9 @@ namespace gpio {
   template<Address P>
   class Port {
     public:
-      static inline void enableClock();
-      static inline void disableClock();
-      static inline void setOutput(u16 const);
+    static inline void enableClock();
+    static inline void disableClock();
+      static inline void setOutput();
       static inline u16 getInput();
 
       static inline void setModes(

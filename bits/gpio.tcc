@@ -1,3 +1,4 @@
+
 /*******************************************************************************
  *
  * Copyright (C) 2012 Jorge Aparicio <jorge.aparicio.r@gmail.com>
@@ -23,7 +24,6 @@
 
 #include "bitband.hpp"
 #include "../include/peripheral/rcc.hpp"
-
 namespace gpio {
 #ifdef STM32F1XX
   /**
@@ -248,7 +248,7 @@ namespace gpio {
    * @brief Outputs the desired logic state on the port.
    */
   template<Address P>
-  void Port<P>::setValue(u32 const value)
+  void Port<P>::setOutput(u32 const value)
   {
     reinterpret_cast<Registers *>(P)->ODR =
     value;
@@ -258,7 +258,7 @@ namespace gpio {
    * @brief Gets the logic state of the port.
    */
   template<Address P>
-  u32 Port<P>::getValue()
+  u32 Port<P>::getOutput()
   {
     return reinterpret_cast<Registers *>(P)->IDR;
   }
@@ -609,4 +609,3 @@ namespace gpio {
 #endif // STM32F1XX
 }
 // namespace gpio
-
